@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+}
+
+.navbar {
+    padding: 15px 0; /* Increased padding for larger navbar */
+}
+
+.logo {
+    width: 40px; /* Size of the logo */
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* White text for better contrast */
+    font-size: 1.2rem; /* Increased font size */
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00; /* Highlight color on hover */
+}
+
+.content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.animated-text {
+    font-size: 30px;
+    margin: 20px 0;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+@keyframes gradientAnimation {
+    0% { background: linear-gradient(45deg, #8A2BE2, #4B0082); }
+    14% { background: linear-gradient(45deg, #4B0082, #0000FF); }
+    28% { background: linear-gradient(45deg, #0000FF, #00FF00); }
+    42% { background: linear-gradient(45deg, #00FF00, #FFFF00); }
+    57% { background: linear-gradient(45deg, #FFFF00, #FF7F50); }
+    71% { background: linear-gradient(45deg, #FF7F50, #FF4500); }
+    100% { background: linear-gradient(45deg, #FF4500, #8A2BE2); }
+}
+
+.get-started {
+    background: linear-gradient(45deg, #8A2BE2, #4B0082); /* Initial color */
+    border: none; /* Remove the border */
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 50px;
+    animation: gradientAnimation 6s infinite; /* Apply animation */
+    transition: transform 0.3s;
+    cursor: pointer; /* Change cursor to pointer */
+    overflow: hidden; /* Hide overflow for text reveal */
+    position: relative; /* Position for inner text */
+}
+
+.get-started:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+
+
+.preview-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.preview-box {
+    background-color: #80deea;
+    width: 200px;
+    height: 150px;
+    margin: 0 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+    border: 2px solid transparent; /* Transparent border initially */
+}
+
+.preview-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    border: 2px solid transparent; /* Default transparent */
+    background: linear-gradient(white, white), linear-gradient(45deg, #ff5722, #ffcc00); /* Gradient border */
+    background-clip: padding-box, border-box; /* Clip background */
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .social-icons {
+    font-size: 24px; /* Size of social icons */
+}
+
+.footer .social-icons a {
+    color: white; /* Color of icons */
+    margin: 0 10px;
+}
+
+.social-logo {
+    width: 50px; /* Adjust the size for the Bootstrap logo */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+    .preview-container {
+        flex-direction: column; /* Stack previews on mobile */
+    }
+    .preview-box {
+        width: 90%; /* Full width on mobile */
+        margin-bottom: 10px; /* Spacing between stacked boxes */
+    }
+}
