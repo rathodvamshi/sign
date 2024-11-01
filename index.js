@@ -1,11 +1,30 @@
-const texts = ["Verify the integrity of your documents with trusted signatures.", "Safeguard against unauthorized alterations and misuse.", "Simplify your workflows with secure and reliable signature verification."];
-let index = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const backgroundAnimation = document.querySelector('.background-animation');
 
-function showText() {
-    const animatedTextElement = document.getElementById('animated-text');
-    animatedTextElement.textContent = texts[index];
-    index = (index + 1) % texts.length; // Cycle through the texts
-}
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        const size = Math.random() * 20 + 10; 
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${Math.random() * window.innerWidth}px`;
+        particle.style.top = `${Math.random() * window.innerHeight}px`;
+        
+        backgroundAnimation.appendChild(particle);
 
-setInterval(showText, 3000); // Change text every 2 seconds
-showText(); // Initial call to show first text
+        particle.animate([
+            { transform: 'translateY(0)', opacity: 1 },
+            { transform: 'translateY(-100px)', opacity: 0 },
+        ], {
+            duration: 5000, 
+            easing: 'ease-in-out',
+            fill: 'forwards',
+        });
+
+        setTimeout(() => {
+            particle.remove();
+        }, 5000);
+    }
+
+    setInterval(createParticle, 300);
+});
